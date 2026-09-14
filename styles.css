@@ -1,0 +1,2065 @@
+/* =========================
+   GENERAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "Georgia", "Times New Roman", serif;
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.cover {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    background-image: url("assets/wedding-cover.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+
+    padding: 100px 40px 20px;
+}
+
+
+/* =========================
+   DARK OVERLAY
+========================= */
+
+.cover::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.28);
+
+    z-index: 0;
+}
+
+
+/* =========================
+   COVER CONTENT
+========================= */
+
+.cover > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* =========================
+   FAMILIES
+========================= */
+
+.families {
+    font-size: 14px;
+
+    letter-spacing: 5px;
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   INVITATION TEXT
+========================= */
+
+.invitation-text {
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================
+   COUPLE NAMES
+========================= */
+
+.couple-names {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.couple-names h1 {
+    font-size: clamp(60px, 10vw, 110px);
+
+    font-weight: 400;
+
+    letter-spacing: 8px;
+
+    line-height: 1.05;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================
+   AMPERSAND
+========================= */
+
+.and {
+    font-size: 60px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-weight: 400;
+
+    margin: 5px 0;
+
+    color: #f1d8b5;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   TAGLINE
+========================= */
+
+.tagline {
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 35px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   DATE
+========================= */
+
+.date {
+    margin-bottom: 35px;
+}
+
+.date h2 {
+    font-size: clamp(22px, 4vw, 32px);
+
+    font-weight: 400;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 12px;
+}
+
+.date p {
+    font-size: 15px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   OPEN INVITATION BUTTON
+========================= */
+
+.open-button {
+    padding: 16px 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 50px;
+
+    background: rgba(174, 103, 103, 0.85);
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.open-button:hover {
+    transform: translateY(-3px);
+
+    background: rgba(190, 120, 120, 0.95);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   BUTTON CLICK
+========================= */
+
+.open-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   WEDDING DETAILS
+========================= */
+
+.details {
+    min-height: 100vh;
+
+    padding: 100px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: #f8f1eb;
+
+    color: #3b3330;
+}
+
+.details h2 {
+    font-size: 50px;
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+.details p {
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .cover {
+        padding: 30px 20px;
+    }
+
+    .families {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    .invitation-text {
+        font-size: 14px;
+
+        letter-spacing: 1px;
+
+        margin-bottom: 25px;
+    }
+
+    .couple-names h1 {
+        font-size: clamp(45px, 15vw, 70px);
+
+        letter-spacing: 5px;
+    }
+
+    .and {
+        font-size: 45px;
+    }
+
+    .tagline {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+
+        margin-bottom: 30px;
+    }
+
+    .date h2 {
+        font-size: 20px;
+
+        letter-spacing: 3px;
+    }
+
+    .date p {
+        font-size: 12px;
+
+        letter-spacing: 3px;
+    }
+
+    .open-button {
+        padding: 14px 30px;
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+    }
+
+    .details {
+        padding: 80px 20px;
+    }
+
+    .details h2 {
+        font-size: 35px;
+    }
+
+    .details p {
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   WEDDING DETAILS
+========================= */
+
+.details {
+    min-height: 100vh;
+
+    padding: 100px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: #f8f1eb;
+
+    color: #3b3330;
+}
+
+
+/* Subtitle */
+
+.section-subtitle {
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    color: #9c7770;
+
+    margin-bottom: 20px;
+}
+
+
+/* Couple name */
+
+.details > h2 {
+    font-size: clamp(45px, 7vw, 75px);
+
+    font-weight: 400;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Message */
+
+.details-message {
+    max-width: 600px;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #6d625e;
+
+    margin-bottom: 60px;
+}
+
+
+/* Wedding information */
+
+.wedding-info {
+    width: 100%;
+    max-width: 900px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+}
+
+
+/* Information cards */
+
+.info-item {
+    flex: 1;
+
+    padding: 35px 25px;
+
+    border-top: 1px solid #cdb8ad;
+    border-bottom: 1px solid #cdb8ad;
+}
+
+
+.info-item span {
+    display: block;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #9c7770;
+
+    margin-bottom: 15px;
+}
+
+
+.info-item h3 {
+    font-size: 20px;
+
+    font-weight: 400;
+
+    margin-bottom: 8px;
+}
+
+
+.info-item p {
+    font-size: 14px;
+
+    color: #766b67;
+}
+
+
+/* =========================
+   MOBILE DETAILS
+========================= */
+
+@media (max-width: 700px) {
+
+    .details {
+        padding: 80px 25px;
+    }
+
+    .details-message {
+        font-size: 15px;
+
+        margin-bottom: 40px;
+    }
+
+    .wedding-info {
+        flex-direction: column;
+
+        gap: 0;
+    }
+
+    .info-item {
+        width: 100%;
+
+        padding: 25px 15px;
+    }
+}
+
+/* =========================
+   CEREMONY & RECEPTION
+========================= */
+
+.venue-section {
+    min-height: 100vh;
+
+    padding: 100px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: #fffaf6;
+
+    color: #3b3330;
+}
+
+.venue-section .section-subtitle {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+
+    color: #9a7770;
+}
+
+.venue-section h2 {
+    font-size: clamp(35px, 6vw, 55px);
+
+    font-weight: 400;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   VENUE CONTAINER
+========================= */
+
+.venue-container {
+    width: 100%;
+
+    max-width: 900px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+
+/* =========================
+   VENUE CARD
+========================= */
+
+.venue-card {
+    padding: 45px 30px;
+
+    background: #f8f1eb;
+
+    border: 1px solid #eadbd2;
+
+    border-radius: 10px;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.venue-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 30px rgba(80, 50, 40, 0.12);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.venue-icon {
+    display: block;
+
+    font-size: 35px;
+
+    color: #ae6767;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.venue-label {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #9a7770;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   VENUE NAME
+========================= */
+
+.venue-card h3 {
+    font-size: 25px;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   TIME
+========================= */
+
+.venue-time {
+    font-size: 18px;
+
+    margin-bottom: 20px;
+
+    color: #ae6767;
+}
+
+
+/* =========================
+   ADDRESS
+========================= */
+
+.venue-address {
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    color: #6b5b56;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .venue-section {
+        padding: 80px 20px;
+    }
+
+    .venue-section h2 {
+        margin-bottom: 35px;
+    }
+
+    .venue-container {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .venue-card {
+        padding: 35px 25px;
+    }
+
+}
+
+/* =========================
+   WEDDING TIMELINE
+========================= */
+
+.timeline-section {
+    min-height: 100vh;
+
+    padding: 100px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #f8f1eb;
+
+    color: #3b3330;
+}
+
+.timeline-section .section-subtitle {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+
+    color: #9a7770;
+
+    text-align: center;
+}
+
+.timeline-section h2 {
+    font-size: clamp(35px, 6vw, 55px);
+
+    font-weight: 400;
+
+    margin-bottom: 60px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline {
+    width: 100%;
+
+    max-width: 850px;
+}
+
+
+/* =========================
+   TIMELINE ITEM
+========================= */
+
+.timeline-item {
+    display: grid;
+
+    grid-template-columns: 120px 40px 1fr;
+
+    min-height: 130px;
+}
+
+
+/* =========================
+   TIME
+========================= */
+
+.timeline-time {
+    padding-top: 5px;
+
+    font-size: 17px;
+
+    color: #ae6767;
+
+    text-align: right;
+
+    padding-right: 20px;
+}
+
+
+/* =========================
+   TIMELINE LINE
+========================= */
+
+.timeline-line {
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.timeline-line::before {
+    content: "";
+
+    position: absolute;
+
+    top: 8px;
+
+    bottom: 0;
+
+    width: 1px;
+
+    background: #d8c3ba;
+}
+
+.timeline-line span {
+    position: relative;
+
+    width: 14px;
+
+    height: 14px;
+
+    border-radius: 50%;
+
+    background: #ae6767;
+
+    border: 3px solid #f8f1eb;
+
+    box-shadow: 0 0 0 1px #ae6767;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   TIMELINE CONTENT
+========================= */
+
+.timeline-content {
+    padding-left: 20px;
+
+    padding-bottom: 40px;
+}
+
+.timeline-content h3 {
+    font-size: 24px;
+
+    font-weight: 400;
+
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    max-width: 450px;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: #6b5b56;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .timeline-section {
+        padding: 80px 20px;
+    }
+
+    .timeline-section h2 {
+        margin-bottom: 45px;
+    }
+
+    .timeline-item {
+        grid-template-columns: 75px 30px 1fr;
+    }
+
+    .timeline-time {
+        font-size: 13px;
+
+        padding-right: 10px;
+    }
+
+    .timeline-content {
+        padding-left: 15px;
+    }
+
+    .timeline-content h3 {
+        font-size: 20px;
+    }
+
+    .timeline-content p {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================
+   OUR STORY
+========================= */
+
+.story-section {
+    min-height: 100vh;
+
+    padding: 100px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #fffaf6;
+
+    color: #3b3330;
+}
+
+
+/* =========================
+   STORY CONTAINER
+========================= */
+
+.story-container {
+    width: 100%;
+
+    max-width: 1100px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   STORY IMAGE
+========================= */
+
+.story-image {
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 15px 40px rgba(80, 50, 40, 0.15);
+}
+
+.story-image img {
+    display: block;
+
+    width: 100%;
+
+    height: 550px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.story-image:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   STORY CONTENT
+========================= */
+
+.story-content {
+    max-width: 500px;
+}
+
+.story-content .section-subtitle {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #9a7770;
+
+    margin-bottom: 15px;
+}
+
+.story-content h2 {
+    font-size: clamp(40px, 6vw, 60px);
+
+    font-weight: 400;
+
+    margin-bottom: 30px;
+}
+
+.story-content p {
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    color: #6b5b56;
+
+    margin-bottom: 20px;
+}
+
+.story-content .story-ending {
+    color: #ae6767;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-style: italic;
+
+    margin-top: 30px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .story-section {
+        padding: 80px 20px;
+    }
+
+    .story-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .story-image {
+        max-width: 450px;
+    }
+
+    .story-image img {
+        height: 450px;
+    }
+
+    .story-content {
+        max-width: 600px;
+
+        text-align: center;
+    }
+
+    .story-content h2 {
+        margin-bottom: 25px;
+    }
+
+}
+
+/* =========================
+   PHOTO GALLERY
+========================= */
+
+.gallery-section {
+    min-height: 100vh;
+
+    padding: 100px 20px;
+
+    background: #f8f1eb;
+
+    color: #3b3330;
+
+    text-align: center;
+}
+
+.gallery-section .section-subtitle {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #9a7770;
+
+    margin-bottom: 15px;
+}
+
+.gallery-section h2 {
+    font-size: clamp(40px, 6vw, 60px);
+
+    font-weight: 400;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   GALLERY GRID
+========================= */
+
+.gallery {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================
+   GALLERY ITEM
+========================= */
+
+.gallery-item {
+    width: 100%;
+
+    height: 350px;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background: #e8ddd6;
+
+    box-shadow:
+        0 8px 25px rgba(80, 50, 40, 0.12);
+}
+
+
+/* =========================
+   GALLERY IMAGE
+========================= */
+
+.gallery-item img {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+
+/* =========================
+   IMAGE HOVER
+========================= */
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-item {
+        height: 300px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .gallery-section {
+        padding: 80px 20px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .gallery-item {
+        height: 220px;
+    }
+
+}
+
+/* =========================
+   RSVP SECTION
+========================= */
+
+.rsvp-section {
+    min-height: 100vh;
+
+    padding: 100px 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #fffaf6;
+
+    color: #3b3330;
+}
+
+
+/* =========================
+   RSVP CONTAINER
+========================= */
+
+.rsvp-container {
+    width: 100%;
+
+    max-width: 650px;
+
+    text-align: center;
+}
+
+.rsvp-container .section-subtitle {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #9a7770;
+
+    margin-bottom: 15px;
+}
+
+.rsvp-container h2 {
+    font-size: clamp(45px, 7vw, 65px);
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+.rsvp-message {
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #6b5b56;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   RSVP FORM
+========================= */
+
+.rsvp-form {
+    width: 100%;
+
+    text-align: left;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+
+    color: #4d403c;
+}
+
+.form-group label span {
+    font-size: 12px;
+
+    color: #9a7770;
+}
+
+/* =========================
+   RSVP MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .rsvp-section {
+        padding: 80px 20px;
+    }
+
+    .rsvp-section h2 {
+        font-size: clamp(40px, 12vw, 50px);
+    }
+
+    .rsvp-message {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .rsvp-form {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 12px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 14px;
+        padding: 13px;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .attendance-options {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .attendance-option {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .rsvp-button {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 12px;
+    }
+
+    /* RSVP success message */
+
+    .rsvp-success {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 40px 20px;
+    }
+
+    .rsvp-success h3 {
+        font-size: 27px;
+    }
+
+    .success-message {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .success-couple {
+        font-size: 22px;
+    }
+
+    .success-date {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #dbcac1;
+
+    border-radius: 6px;
+
+    background: #f8f1eb;
+
+    color: #3b3330;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   INPUT FOCUS
+========================= */
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+
+    border-color: #ae6767;
+
+    box-shadow:
+        0 0 0 3px rgba(174, 103, 103, 0.12);
+}
+
+
+/* =========================
+   TEXTAREA
+========================= */
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 120px;
+}
+
+
+/* =========================
+   ATTENDANCE OPTIONS
+========================= */
+
+.attendance-options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.radio-option {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+}
+
+.radio-option input {
+    width: 16px;
+
+    height: 16px;
+
+    accent-color: #ae6767;
+}
+
+.radio-option span {
+    font-size: 14px;
+}
+
+
+/* =========================
+   RSVP BUTTON
+========================= */
+
+.rsvp-button {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background: #ae6767;
+
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.rsvp-button:hover {
+    transform: translateY(-3px);
+
+    background: #be7878;
+
+    box-shadow:
+        0 8px 25px rgba(80, 50, 40, 0.2);
+}
+
+.rsvp-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .rsvp-section {
+        padding: 80px 20px;
+    }
+
+    .rsvp-message {
+        font-size: 15px;
+
+        margin-bottom: 35px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+}
+
+/* =========================
+   LOCATION SECTION
+========================= */
+
+.location-section {
+    min-height: 100vh;
+
+    padding: 100px 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #fffaf6;
+
+    color: #3b3330;
+
+    text-align: center;
+}
+
+
+/* =========================
+   LOCATION CONTAINER
+========================= */
+
+.location-container {
+    width: 100%;
+
+    max-width: 1000px;
+}
+
+.location-container .section-subtitle {
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #9a7770;
+
+    margin-bottom: 15px;
+}
+
+.location-container h2 {
+    font-size: clamp(45px, 7vw, 65px);
+
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+
+.location-message {
+    max-width: 600px;
+
+    margin: 0 auto 35px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    color: #6b5b56;
+}
+
+
+/* =========================
+   LOCATION INFO
+========================= */
+
+.location-info {
+    margin-bottom: 35px;
+}
+
+.location-info h3 {
+    font-size: 25px;
+
+    font-weight: 400;
+
+    margin-bottom: 10px;
+}
+
+.location-info p {
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color: #6b5b56;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+.map-container {
+    width: 100%;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    border: 1px solid #eadbd2;
+
+    box-shadow:
+        0 10px 30px rgba(80, 50, 40, 0.12);
+
+    margin-bottom: 30px;
+}
+
+.map-container iframe {
+    display: block;
+
+    width: 100%;
+
+    height: 400px;
+}
+
+
+/* =========================
+   DIRECTIONS BUTTON
+========================= */
+
+.directions-button {
+    display: inline-block;
+
+    padding: 15px 35px;
+
+    border-radius: 50px;
+
+    background: #ae6767;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.directions-button:hover {
+    transform: translateY(-3px);
+
+    background: #be7878;
+
+    box-shadow:
+        0 8px 25px rgba(80, 50, 40, 0.2);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .location-section {
+        padding: 80px 20px;
+    }
+
+    .location-message {
+        font-size: 15px;
+    }
+
+    .map-container iframe {
+        height: 350px;
+    }
+
+    .directions-button {
+        padding: 14px 28px;
+
+        font-size: 12px;
+    }
+
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    background: rgba(255, 250, 246, 0.92);
+
+    backdrop-filter: blur(10px);
+
+    border-bottom: 1px solid rgba(174, 103, 103, 0.15);
+
+    z-index: 1000;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.nav-logo {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 24px;
+
+    letter-spacing: 3px;
+
+    color: #ae6767;
+}
+
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #4d403c;
+
+    text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    transition: color 0.3s ease;
+}
+
+
+/* =========================
+   NAV HOVER
+========================= */
+
+.nav-links a:hover {
+    color: #ae6767;
+}
+
+
+/* =========================
+   NAV UNDERLINE
+========================= */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -6px;
+
+    width: 0;
+
+    height: 1px;
+
+    background: #ae6767;
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        height: auto;
+
+        min-height: 65px;
+
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .nav-links {
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 10px 18px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+    }
+
+}
+
+/* =========================
+   RSVP SUCCESS MESSAGE
+========================= */
+
+.rsvp-success {
+    display: none;
+    margin-top: 30px;
+    padding: 50px 35px;
+    background: #f8f1eb;
+    border: 1px solid #eadbd2;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(80, 50, 40, 0.12);
+    animation: successFadeIn 0.6s ease;
+}
+
+.success-heart {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ae6767;
+    border-radius: 50%;
+    color: #ae6767;
+    font-size: 35px;
+}
+
+.success-subtitle {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #9a7770;
+    margin-bottom: 15px;
+}
+
+.rsvp-success h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #3b3330;
+    margin-bottom: 20px;
+}
+
+.success-message {
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #6b5b56;
+}
+
+.success-divider {
+    width: 100%;
+    max-width: 250px;
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #ae6767;
+}
+
+.success-divider::before,
+.success-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #dbcac1;
+}
+
+.success-divider span {
+    font-size: 20px;
+}
+
+.success-couple {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    color: #ae6767;
+    margin-bottom: 8px;
+}
+
+.success-date {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #9a7770;
+}
+
+@keyframes successFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .rsvp-success {
+        padding: 40px 20px;
+    }
+
+    .rsvp-success h3 {
+        font-size: 27px;
+    }
+
+    .success-message {
+        font-size: 14px;
+    }
+
+}
+
+/* =========================
+   HAMBURGER MENU
+========================= */
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: #ae6767;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    padding: 5px;
+
+    line-height: 1;
+}
+
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        height: 65px;
+
+        padding: 0 20px;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+    }
+
+    .nav-logo {
+        font-size: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 0;
+
+        padding: 15px 0 20px;
+
+        background: rgba(255, 250, 246, 0.98);
+
+        backdrop-filter: blur(10px);
+
+        border-bottom: 1px solid rgba(174, 103, 103, 0.15);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+
+        padding: 13px 20px;
+
+        text-align: center;
+
+        font-size: 12px;
+    }
+
+}
