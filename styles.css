@@ -2089,3 +2089,51 @@ body {
     }
 
 }
+
+/* =========================
+   FOOTER
+========================= */
+
+.wedding-footer {
+    padding: 60px 20px 35px;
+    text-align: center;
+    background: #faf7f5;
+    border-top: 1px solid #eadfda;
+}
+
+.footer-names {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    color: #ae6767;
+    margin-bottom: 15px;
+}
+
+.wedding-footer p {
+    color: #6f5b5b;
+    font-size: 0.9rem;
+    margin: 8px 0;
+}
+
+.footer-divider {
+    width: 45px;
+    height: 1px;
+    background: #ae6767;
+    margin: 20px auto;
+}
+
+.footer-date {
+    letter-spacing: 2px;
+}
+
+.footer-credit a {
+    color: #ae6767;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.footer-credit a:hover {
+    color: #8f4f4f;
+    text-decoration: underline;
+}
