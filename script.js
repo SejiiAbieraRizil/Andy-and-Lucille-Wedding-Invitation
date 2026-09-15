@@ -203,3 +203,50 @@ if (selectedAttendance.value === "yes") {
     }
 
 });
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+let isPlaying = false;
+
+// Try to automatically play music
+window.addEventListener("load", () => {
+    music.play()
+        .then(() => {
+            isPlaying = true;
+
+            musicButton.innerHTML =
+                '<i class="fa-solid fa-music"></i>';
+        })
+        .catch(() => {
+            // Browser blocked autoplay
+            isPlaying = false;
+
+            musicButton.innerHTML =
+                '<i class="fa-solid fa-volume-xmark"></i>';
+        });
+});
+
+
+// Turn music ON/OFF
+musicButton.addEventListener("click", () => {
+
+    if (isPlaying) {
+
+        music.pause();
+
+        musicButton.innerHTML =
+            '<i class="fa-solid fa-volume-xmark"></i>';
+
+        isPlaying = false;
+
+    } else {
+
+        music.play();
+
+        musicButton.innerHTML =
+            '<i class="fa-solid fa-music"></i>';
+
+        isPlaying = true;
+    }
+});
