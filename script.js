@@ -6,50 +6,71 @@ document.addEventListener("DOMContentLoaded", function () {
     const rsvpSuccess = document.getElementById("rsvpSuccess");
     const successTitle = document.getElementById("successTitle");
     const successMessage = document.getElementById("successMessage");
-    const menuToggle =
-    document.getElementById("menuToggle");
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.querySelector(".nav-links");
+    const guestCountGroup = document.getElementById("guestCountGroup");
+    const guestCount = document.getElementById("guestCount");
+    const attendanceOptions = document.querySelectorAll('input[name="attendance"]');
+    const music = document.getElementById("backgroundMusic");
+    const musicButton = document.getElementById("musicButton");
 
-const navLinks =
-    document.querySelector(".nav-links");
+    let isPlaying = false;
 
-    menuToggle.addEventListener("click", function () {
-    navLinks.classList.toggle("active");
-});
+    function updateMusicButton() {
+        if (!musicButton) return;
 
-navLinks.querySelectorAll("a").forEach(function (link) {
+        musicButton.innerHTML = isPlaying
+            ? '<i class="fa-solid fa-music"></i>'
+            : '<i class="fa-solid fa-volume-xmark"></i>';
+    }
 
-    link.addEventListener("click", function () {
-        navLinks.classList.remove("active");
-    });
+    function setMusicState(play) {
+        if (!music) return;
 
-});
+        if (play) {
+            music.play()
+                .then(() => {
+                    isPlaying = true;
+                    updateMusicButton();
+                })
+                .catch(() => {
+                    isPlaying = false;
+                    updateMusicButton();
+                });
+        } else {
+            music.pause();
+            isPlaying = false;
+            updateMusicButton();
+        }
+    }
 
-    const guestCountGroup =
-    document.getElementById("guestCountGroup");
+    if (musicButton) {
+        musicButton.addEventListener("click", function () {
+            setMusicState(!isPlaying);
+        });
+    }
 
-const guestCount =
-    document.getElementById("guestCount");
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+        });
 
-const attendanceOptions =
-    document.querySelectorAll(
-        'input[name="attendance"]'
-    );
-
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+            });
+        });
+    }
 
     // =========================
     // OPEN INVITATION BUTTON
     // =========================
 
     if (openInvitation && details) {
-
         openInvitation.addEventListener("click", function () {
-
-            details.scrollIntoView({
-                behavior: "smooth"
-            });
-
+            setMusicState(true);
+            details.scrollIntoView({ behavior: "smooth" });
         });
-
     }
 
     // =========================
@@ -204,49 +225,14 @@ if (selectedAttendance.value === "yes") {
 
 });
 
-const music = document.getElementById("backgroundMusic");
-const musicButton = document.getElementById("musicButton");
+    updateMusicButton();
 
-let isPlaying = false;
-
-// Try to automatically play music
-window.addEventListener("load", () => {
-    music.play()
-        .then(() => {
-            isPlaying = true;
-
-            musicButton.innerHTML =
-                '<i class="fa-solid fa-music"></i>';
-        })
-        .catch(() => {
-            // Browser blocked autoplay
-            isPlaying = false;
-
-            musicButton.innerHTML =
-                '<i class="fa-solid fa-volume-xmark"></i>';
+    if (musicButton && music) {
+        musicButton.addEventListener("click", () => {
+            if (isPlaying) {
+                setMusicState(false);
+            } else {
+                setMusicState(true);
+            }
         });
-});
-
-
-// Turn music ON/OFF
-musicButton.addEventListener("click", () => {
-
-    if (isPlaying) {
-
-        music.pause();
-
-        musicButton.innerHTML =
-            '<i class="fa-solid fa-volume-xmark"></i>';
-
-        isPlaying = false;
-
-    } else {
-
-        music.play();
-
-        musicButton.innerHTML =
-            '<i class="fa-solid fa-music"></i>';
-
-        isPlaying = true;
     }
-});
